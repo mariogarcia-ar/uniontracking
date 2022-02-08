@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export async function loginUser(credentials) {
-    return fetch('https://uniontracking-3.frogi.dev/api/login', {
+    return fetch( process.env.REACT_APP_API_URL+'/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
