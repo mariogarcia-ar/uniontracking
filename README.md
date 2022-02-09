@@ -29,9 +29,20 @@ npm run start
 ```
 El cual abrira el browser predeterminado en la direccion http://localhost:3000/ . 
 
+![login](/public/doc/login.png)
+
+
 En el mismo pide los datos de acceso. 
  - Username: 
  - Password: 
 
+Una vez ingresado muesta un dashboard donde se encuentra un boton para anexar un nuevo miembro.
 
+
+![dashboard](/public/doc/dashboard.png)
   
+ Presionando en el mismo nos envia al formulario donde podemos crear a un nuevo miembro.
+ 
+![add_member](/public/doc/add_member.png)
+
+
