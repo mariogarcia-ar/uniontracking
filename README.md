@@ -47,7 +47,9 @@ Una vez ingresado muesta un dashboard donde se encuentra un boton para anexar un
 
 # Estructura del Sistema
 La estructura del mismo esta basado en el boileplate generado por npx 
+
 ![structure](/public/doc/structure.png)
+
 A los cuales se anexaron:
  - components: carpeta donde estan los componentes del sistemas
  - services: donde se encuentran las llamadas a los servicios 
