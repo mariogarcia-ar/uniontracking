@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Instalacion
+Clonar el codigo desde el repositorio.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```bash
+git clone https://github.com/mariogarcia-ar/uniontracking.git
+```
+Ingresar a la carpeta
+```bash
+cd uniontracking
+```
+Instalar los paquetes necesarios
 
-## Available Scripts
+```bash
+npm install
+```
+## Setear las variables de entorno
+Para setear las variables de entorno debemos renombrar el .env_example a .env
+```bash
+cp .env_example  .env
+```
+Nota: en este caso deje la url de la api dado que no contiene informacion sensible.
 
-In the project directory, you can run:
 
-### `npm start`
+# Ejecutar 
+Una vez instalado los paquetes requeridos. Podemos iniciar la app con el comando
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm run start
+```
+El cual abrira el browser predeterminado en la direccion http://localhost:3000/ . 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![login](/public/doc/login.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+En el mismo pide los datos de acceso. 
+ - Username: 
+ - Password: 
 
-### `npm run build`
+Una vez ingresado muesta un dashboard donde se encuentra un boton para anexar un nuevo miembro.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![dashboard](/public/doc/dashboard.png)
+  
+ Presionando en el mismo nos envia al formulario donde podemos crear a un nuevo miembro.
+ 
+![add_member](/public/doc/add_member.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Estructura del Sistema
+La estructura del mismo esta basado en el boileplate generado por npx 
+![structure](/public/doc/structure.png)
+A los cuales se anexaron:
+ - components: carpeta donde estan los componentes del sistemas
+ - services: donde se encuentran las llamadas a los servicios 
 
-### `npm run eject`
+En los componentes se crearon para cada uno de las paginas, las cuales son accedidas a traves de los routers. Ademas se creo un componente Select en src/components/App/Select.js que facilita la lectura y mantenimiento de la aplicacion.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Los datos de la session se guardan en localStorage para permitir la recarga de la misma. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Bugs y Pendientes
+Dado que es una prueba el codigo no esta para llevarlo a produccion debido a que surgieron una series de dudas como ser:
+ -  En Member Status hay dos check que son requeridos lo cual no seria adecuado
+ -  en Job Info, hay un campo Original Hire el cual no pude machear con los existentes en swager, por lo cual necesitaria mas informacion al respecto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+En cuanto a validaciones tengo pendiente determinar los formatos de:
+ - zip code
+ - state
+ - city
+Dado que los mismo si son para USA / Canada tienen una logica, pero si es para otros paises, necesitaria mas informacion.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+En cuanto a SSN:
+ - realice un pattern minimo para que ingresen 3+2+4 digitos 
+ - no realice validacion de pattern para IAFF dado que no tengo info sobre la misma
 
-## Learn More
+En cuanto a Member Status:
+ - hay 2 status uno es status_id y el otro es union_membership_status_id, por los valores obtenidos y por lo que presenta swager intuyo que es el ultimo, pero necesito validacion del mismo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+En cuanto a Original Hire:
+ - no pude vincular dicho campo con los definidos en swagger
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+En cuanto al home phone
+ - realice una validacion de pattern para nros que empiezan con 1 seguido de 9 digitos.
 
-### Code Splitting
+En cuanto a manejo de excepciones:
+ - realice las minimas y necesarias. Dado que el api no retorna de forma consistente las mismas y entiendo que esta en wip.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Pendientes
+Los principales estan referentes a determinar si hay algun framework que se este usando en la empresa y adecuar el desarrollo al mismo.
+Aparte de ello debo mejorar el componente select y refactorizar el codigo.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
