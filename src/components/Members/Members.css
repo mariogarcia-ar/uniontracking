@@ -1,0 +1,114 @@
+.members_wrapper {
+    padding: 13px;
+    border-radius: 11px;
+    background-color: white;
+}
+    .members_wrapper label {
+        display: inline-block;
+        width: calc(50% - 18px);
+        padding: 10px 8px;
+    }
+
+    .members_wrapper label span{
+        color: red;
+    }
+    @media (max-width:1024px) {
+        .members_wrapper label {
+            width: calc(100% - 18px);
+            display: block;
+        }
+    }
+    .members_wrapper label.fullw {
+        width: calc(100% - 18px);
+    }
+    .members_wrapper h3 {
+        display: block;
+    }
+    .members_wrapper p {
+        margin: 6px 0px;
+        padding: 0;
+        color: #0E2454;
+        font-weight: bold;
+    }
+    .members_wrapper select,
+    .members_wrapper input {
+        background-color: #ededed;
+        color: #060d5e;
+        border:1px solid  #ededed;
+    }
+   
+    .members_wrapper input.error {
+        border:1px solid red;
+    }
+    .members_wrapper input,
+    .members_wrapper select,
+    .members_wrapper button {
+        width: calc(100% - 38px);
+        border-radius: 5px;
+        outline: none;
+        padding: 10px 16px;
+        max-width: 100%;
+        display: block;
+    }
+    input[type=checkbox],
+    input[type=radio] {
+        width: auto;
+        margin-top: 8px;
+        margin-right: 6px;
+        float: left;
+    }
+    .members_wrapper select,
+    .members_wrapper button {
+        width: calc(100%);
+    }
+    .members_wrapper button#create {
+        background-color:#f21b00;
+        color:#fff;
+        border:1px solid #f21b00;
+    }
+    .members_wrapper button#close {
+        background-color:#cecece;
+        color:#000;
+        border:1px solid #cecece;
+    }
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+@media (max-width:1024px) {
+    .column {
+        display: block;
+        display: block;
+        width: 100%;
+        flex-direction: row;
+        flex: none;
+    }
+}
+.column div {
+    display: block
+    
+}
+
+h2, h3{
+    color: #f41a00;
+    padding: 10px 8px 4px 8px;
+    margin: 0;
+    display: block;
+}
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 16px;
+}
